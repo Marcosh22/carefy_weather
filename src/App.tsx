@@ -1,5 +1,5 @@
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom'
 
-export default function App() {
-  return <BrowserRouter></BrowserRouter>;
+export default function App () {
+  return <BrowserRouter></BrowserRouter>
 }
