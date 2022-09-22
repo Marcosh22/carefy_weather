@@ -1,1 +1,3 @@
-export type WheaterModel = {};
+export type WheaterModel = {
+  location_id: number;
+};

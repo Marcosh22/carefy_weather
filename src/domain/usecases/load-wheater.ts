@@ -6,8 +6,7 @@ export interface LoadWheather {
 
 export namespace LoadWheather {
   export type Params = {
-    email: string;
-    password: string;
+    location_id: number;
   };
 
   export type Model = WheaterModel;
