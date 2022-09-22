@@ -1,5 +1,5 @@
-import { makeRemoteLoadCityList, makeRemoteLoadWeatherResult } from '@/main/factories/usecases'
-import { SearchCityWheater } from '@/presentation/pages'
+import { makeRemoteLoadCityList, makeRemoteLoadWeatherResult } from 'main/factories/usecases'
+import { SearchCityWheater } from 'presentation/pages'
 
 import React from 'react'
 

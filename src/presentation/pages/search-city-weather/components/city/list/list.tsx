@@ -1,6 +1,6 @@
 import './list-styles.scss'
 
-import { LoadCityList } from '@/domain/usecases'
+import { LoadCityList } from 'domain/usecases'
 import React from 'react'
 import { CityEmpty, CityItem } from '../..'
 

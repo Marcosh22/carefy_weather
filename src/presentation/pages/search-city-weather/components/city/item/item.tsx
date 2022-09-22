@@ -1,6 +1,6 @@
 import './item-styles.scss'
 
-import { LoadCityList } from '@/domain/usecases'
+import { LoadCityList } from 'domain/usecases'
 import React from 'react'
 
 type Props = {

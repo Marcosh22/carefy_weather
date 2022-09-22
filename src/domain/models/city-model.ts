@@ -1,4 +1,4 @@
-import { AdministrativeAreaModel, CountryModel } from '@/domain/models'
+import { AdministrativeAreaModel, CountryModel } from 'domain/models'
 
 export type CityModel = {
   Key: number
