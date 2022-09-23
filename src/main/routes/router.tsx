@@ -16,9 +16,9 @@ const Router: React.FC = () => {
   return (
     <React.StrictMode>
       <RecoilRoot initializeState={({ set }) => set(currentCityState, state)}>
-        <BrowserRouter>
+        <BrowserRouter basename='/carefy_weather'>
           <Routes>
-              <Route path="/carefy_weather" element={<MakeSearchCityWheater />}/>
+              <Route path="/" element={<MakeSearchCityWheater />}/>
           </Routes>
         </BrowserRouter>
       </RecoilRoot>
