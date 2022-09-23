@@ -4,10 +4,8 @@ import React, { memo } from 'react'
 
 const Header: React.FC = () => {
   return (
-    <header className='headerWrap'>
-      <div className='headerContent'>
-
-      </div>
+    <header className='header'>
+      <span>CarefyWeather</span>
     </header>
   )
 }

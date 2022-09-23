@@ -1,29 +1,54 @@
 import { LoadCityList, LoadWeatherResult } from 'domain/usecases'
-import { Error, Footer, Header } from 'presentation/components'
-import { useState } from 'react'
-import { CityList } from './components'
+import { Error, Footer, Header, currentCityState } from 'presentation/components'
+import { useOutsideClick } from 'presentation/hooks'
+import { useState, useEffect } from 'react'
+import { useRecoilValue } from 'recoil'
+import { CityNameList, WeatherCard } from './components'
 import './search-city-weather-styles.scss'
 
 type Props = {
   loadCityList: LoadCityList
-  loadWheaterResult: LoadWeatherResult
+  loadWeatherResult: LoadWeatherResult
 }
 
-const SearchCityWheater: React.FC<Props> = ({
+const SearchCityWeather: React.FC<Props> = ({
   loadCityList,
-  loadWheaterResult
+  loadWeatherResult
 }: Props) => {
   const [isLoading, setLoading] = useState<boolean>(false)
+  const [showCityList, setShowCityList] = useState<boolean>(false)
   const [error, setError] = useState<string>('')
-  const [city, setCity] = useState<string>('')
+  const [citySearchQuery, setCitySearchQuery] = useState<string>('')
   const [cities, setCities] = useState<LoadCityList.Model[]>([])
+  const [weatherResult, setWeatherResult] = useState<LoadWeatherResult.Model>()
 
-  const handleCityInputChange = async (
+  const { getCurrentCity, setCurrentCity } = useRecoilValue(currentCityState)
+
+  useEffect(() => {
+    if (getCurrentCity()?.Key) {
+      loadWeather()
+    }
+  }, [getCurrentCity()?.Key])
+
+  const handleClickOutsideCityList = (): void => {
+    setShowCityList(false)
+  }
+
+  const cityListRef = useOutsideClick(handleClickOutsideCityList)
+
+  const handleCityInputChange = (
     event: React.FormEvent<HTMLInputElement>
-  ): Promise<void> => {
+  ): void => {
     event.preventDefault()
     const value = event.currentTarget.value
-    setCity(value)
+    setCitySearchQuery(value)
+  }
+
+  const handleCitySelect = (
+    city: LoadCityList.Model): void => {
+    setCitySearchQuery('')
+    setShowCityList(false)
+    setCurrentCity(city)
   }
 
   const handleSubmit = async (
@@ -36,10 +61,17 @@ const SearchCityWheater: React.FC<Props> = ({
       }
 
       setLoading(true)
-      setError('')
 
-      const cities = await loadCityList.Search({ q: city, apikey: process.env.REACT_APP_API_KEY })
-      setCities(cities)
+      if (citySearchQuery) {
+        const cities = await loadCityList.Search(citySearchQuery)
+        setCities(cities)
+        setShowCityList(true)
+      } else {
+        setCities([])
+        setShowCityList(false)
+      }
+
+      setError('')
       setLoading(false)
     } catch (error: any) {
       setLoading(false)
@@ -47,20 +79,38 @@ const SearchCityWheater: React.FC<Props> = ({
     }
   }
 
+  const loadWeather = async (): Promise<void> => {
+    try {
+      setLoading(true)
+
+      const locationKey = getCurrentCity().Key
+      const weather = await loadWeatherResult.Load(locationKey)
+
+      setWeatherResult(weather)
+      setLoading(false)
+      setError('')
+    } catch (error: any) {
+      setLoading(false)
+      setError(error.message)
+    }
+  }
+
   return (
-    <div className=''>
+    <div className='searchCityWeatherWrapper'>
       <Header />
-      <div className=''>
-        <h2>Enquetes</h2>
+      <div className='searchCityWeatherContent'>
         <form onSubmit={handleSubmit}>
-          <input type="text" name='city' value={city} onChange={handleCityInputChange}/>
-          <input type="submit" value="Buscar" />
+          <div className="inputGroup">
+            <input type="search" name='citySearchQuery' value={citySearchQuery} onChange={handleCityInputChange}/>
+            <input type="submit" value="Buscar" />
+          </div>
         </form>
-        {error ? <Error error={error} /> : <CityList cities={cities} />}
+        {error ? <Error error={error} /> : (showCityList ? <CityNameList cities={cities} onSelect={handleCitySelect} propRef={cityListRef} /> : null)}
+        { getCurrentCity() && weatherResult && !error ? <WeatherCard city={getCurrentCity()} weather={weatherResult} /> : null }
       </div>
       <Footer />
     </div>
   )
 }
 
-export default SearchCityWheater
+export default SearchCityWeather

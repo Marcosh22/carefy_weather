@@ -1,0 +1,28 @@
+@import "../../styles/colors.scss";
+
+.searchCityWeatherWrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.searchCityWeatherContent {
+    padding: 50px 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.searchCityWeatherTitle {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: $primary;
+}
+
+.inputGroup {
+    width: 300px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}

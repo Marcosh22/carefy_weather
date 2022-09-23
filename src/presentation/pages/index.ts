@@ -1,1 +1,1 @@
-export { default as SearchCityWheater } from './search-city-weather/search-city-weather'
+export { default as SearchCityWeather } from './search-city-weather/search-city-weather'

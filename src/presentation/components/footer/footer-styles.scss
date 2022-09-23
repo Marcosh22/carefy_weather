@@ -1,1 +1,14 @@
+@import "../../styles/colors.scss";
 
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $white;
+  background-color: $secondary;
+  height: 50px;
+}
+
+.footer a {
+  color: $primary;
+}

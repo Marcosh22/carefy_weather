@@ -1,12 +1,12 @@
 import React from 'react'
 import './empty-styles.scss'
 
-const CityList: React.FC = () => {
+const CityNameEmpty: React.FC = () => {
   return (
-    <li>
+    <li className='listEmpty'>
       NENHUMA CIDADE ENCONTRADA
     </li>
   )
 }
 
-export default CityList
+export default CityNameEmpty

@@ -1,20 +1,29 @@
 import { HttpClient, HttpStatusCode } from 'data/protocols/http'
-import { AccessDeniedError, UnexpectedError } from 'domain/errors'
+import { AccessDeniedError, UnexpectedError, ServiceUnavailableError } from 'domain/errors'
 import { LoadWeatherResult } from 'domain/usecases'
 
 export class RemoteLoadWeatherResult implements LoadWeatherResult {
   constructor (
     private readonly url: string,
-    private readonly httpClient: HttpClient<RemoteLoadWeatherResult.Model>
+    private readonly language: string,
+    private readonly showDetails: boolean,
+    private readonly apiKey: string,
+    private readonly httpClient: HttpClient<RemoteLoadWeatherResult.Model[]>
   ) {}
 
-  async Load (params: LoadWeatherResult.Params): Promise<LoadWeatherResult.Model> {
+  async Load (locationKey: number): Promise<LoadWeatherResult.Model> {
+    const params = {
+      details: this.showDetails,
+      apikey: this.apiKey,
+      language: this.language
+    }
+
     const httpResponse = await this.httpClient.request({
-      url: this.url,
+      url: `${this.url}${locationKey}`,
       method: 'get',
       params
     })
-    const remoteWeatherResult = httpResponse.body
+    const remoteWeatherResult = httpResponse.body[0]
     switch (httpResponse.statusCode) {
       case HttpStatusCode.ok:
         return {
@@ -25,6 +34,8 @@ export class RemoteLoadWeatherResult implements LoadWeatherResult {
         }
       case HttpStatusCode.forbidden:
         throw new AccessDeniedError()
+      case HttpStatusCode.unavailable:
+        throw new ServiceUnavailableError()
       default:
         throw new UnexpectedError()
     }

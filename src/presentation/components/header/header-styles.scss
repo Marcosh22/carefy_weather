@@ -1,0 +1,15 @@
+@import "../../styles/colors.scss";
+
+.header {
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $primary;
+
+  & > span {
+    color: $white;
+    font-size: 30px;
+    font-weight: 900;
+  }
+}

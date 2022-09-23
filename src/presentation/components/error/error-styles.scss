@@ -1,0 +1,9 @@
+@import "../../styles/colors.scss";
+
+.errorWrap {
+  background-color: $invalidBackground;
+  border: 1px solid $invalidBorderColor;
+  color: $invalidColor;
+  max-width: 300px;
+  padding: 5px 15px;
+}
