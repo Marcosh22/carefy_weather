@@ -4,7 +4,7 @@
   "description": "",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://marcosh22.github.io/carefy_weather/",
+  "homepage": "https://marcosh22.github.io/carefy_weather",
   "engines": {
     "node": ">=16.17.0",
     "yarn": ">=1.22.19",
