@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/carefy_weather/static/css/main.fe377da2.css",
-    "main.js": "/carefy_weather/static/js/main.3e64fa6c.js",
+    "main.css": "/carefy_weather/static/css/main.243633c9.css",
+    "main.js": "/carefy_weather/static/js/main.4c6a1867.js",
     "static/media/21.svg": "/carefy_weather/static/media/21.ce4cc82c93f30741160cd1028e6a5b5b.svg",
     "static/media/4.svg": "/carefy_weather/static/media/4.0f1a03056c08f507dd9b855a7e304014.svg",
     "static/media/44.svg": "/carefy_weather/static/media/44.45918d30eb64a0439d2ba37173fa5dcd.svg",
@@ -47,11 +47,11 @@
     "static/media/1.svg": "/carefy_weather/static/media/1.7a2dcb52f1c2f8fcfdf7e0ed0bee5693.svg",
     "static/media/7.svg": "/carefy_weather/static/media/7.c7994bfba4fcf063e50afcd009cefae2.svg",
     "index.html": "/carefy_weather/index.html",
-    "main.fe377da2.css.map": "/carefy_weather/static/css/main.fe377da2.css.map",
-    "main.3e64fa6c.js.map": "/carefy_weather/static/js/main.3e64fa6c.js.map"
+    "main.243633c9.css.map": "/carefy_weather/static/css/main.243633c9.css.map",
+    "main.4c6a1867.js.map": "/carefy_weather/static/js/main.4c6a1867.js.map"
   },
   "entrypoints": [
-    "static/css/main.fe377da2.css",
-    "static/js/main.3e64fa6c.js"
+    "static/css/main.243633c9.css",
+    "static/js/main.4c6a1867.js"
   ]
 }
