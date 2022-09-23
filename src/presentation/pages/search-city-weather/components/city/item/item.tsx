@@ -1,7 +1,8 @@
-import './item-styles.scss'
 
 import { LoadCityList } from 'domain/usecases'
 import React from 'react'
+import './item-styles.scss'
+
 
 type Props = {
   city: LoadCityList.Model

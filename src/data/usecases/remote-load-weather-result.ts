@@ -8,10 +8,11 @@ export class RemoteLoadWeatherResult implements LoadWeatherResult {
     private readonly httpClient: HttpClient<RemoteLoadWeatherResult.Model>
   ) {}
 
-  async Load (): Promise<LoadWeatherResult.Model> {
+  async Load (params: LoadWeatherResult.Params): Promise<LoadWeatherResult.Model> {
     const httpResponse = await this.httpClient.request({
       url: this.url,
-      method: 'get'
+      method: 'get',
+      params
     })
     const remoteWeatherResult = httpResponse.body
     switch (httpResponse.statusCode) {

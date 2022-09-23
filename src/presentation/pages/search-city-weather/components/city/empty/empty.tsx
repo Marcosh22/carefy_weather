@@ -1,5 +1,5 @@
 import React from 'react'
-import './item-styles.scss'
+import './empty-styles.scss'
 
 const CityList: React.FC = () => {
   return (

@@ -3,7 +3,7 @@ import { SearchCityWheater } from 'presentation/pages'
 
 import React from 'react'
 
-export const makeSearchCityWheater: React.FC = () => {
+export const MakeSearchCityWheater: React.FC = () => {
   return (
     <SearchCityWheater
       loadCityList={makeRemoteLoadCityList()}

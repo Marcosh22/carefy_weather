@@ -7,6 +7,7 @@ export interface LoadCityList {
 export namespace LoadCityList {
   export type Params = {
     q: string
+    apikey: string
   }
 
   export type Model = CityModel
