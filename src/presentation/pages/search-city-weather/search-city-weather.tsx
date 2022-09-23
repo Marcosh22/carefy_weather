@@ -100,9 +100,10 @@ const SearchCityWeather: React.FC<Props> = ({
       <Header />
       <div className='searchCityWeatherContent'>
         <form onSubmit={handleSubmit}>
-          <div className="inputGroup">
-            <input type="search" name='citySearchQuery' value={citySearchQuery} onChange={handleCityInputChange}/>
-            <input type="submit" value="Buscar" />
+          <label>Busque a sua cidade:</label>
+          <div className='inputGroup'>
+            <input type='search' name='citySearchQuery' id='label' value={citySearchQuery} onChange={handleCityInputChange}/>
+            <input type='submit' value='Buscar' />
           </div>
         </form>
         {error ? <Error error={error} /> : (showCityList ? <CityNameList cities={cities} onSelect={handleCitySelect} propRef={cityListRef} /> : null)}
