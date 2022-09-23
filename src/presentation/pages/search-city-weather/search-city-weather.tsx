@@ -106,7 +106,9 @@ const SearchCityWeather: React.FC<Props> = ({
             <input type='submit' value='Buscar' />
           </div>
         </form>
+        <div className='list-wrapper'>
         {error ? <Error error={error} /> : (showCityList ? <CityNameList cities={cities} onSelect={handleCitySelect} propRef={cityListRef} /> : null)}
+        </div>
         { getCurrentCity() && weatherResult && !error ? <WeatherCard city={getCurrentCity()} weather={weatherResult} /> : null }
       </div>
       <Footer />
