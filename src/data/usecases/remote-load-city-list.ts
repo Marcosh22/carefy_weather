@@ -35,10 +35,10 @@ export class RemoteLoadCityList implements LoadCityList {
         }))
       case HttpStatusCode.noContent:
         return []
-      case HttpStatusCode.unavailable:
-        throw new ServiceUnavailableError()
       case HttpStatusCode.forbidden:
         throw new AccessDeniedError()
+      case HttpStatusCode.unavailable:
+        throw new ServiceUnavailableError()
       default:
         throw new UnexpectedError()
     }

@@ -1,6 +1,6 @@
 export class ServiceUnavailableError extends Error {
   constructor () {
-    super('Serviço Indisponível.')
+    super('Serviço Indisponível')
     this.name = 'ServiceUnavailableError'
   }
 }
