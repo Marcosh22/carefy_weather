@@ -1,46 +1,119 @@
-# Getting Started with Create React App
+[![Build Status](https://travis-ci.org/Marcosh22/carefy_weather.svg?branch=master)](https://travis-ci.org/Marcosh22/carefy_weather)
+[![Coverage Status](https://coveralls.io/repos/github/Marcosh22/carefy_weather/badge.svg?branch=master)](https://coveralls.io/github/Marcosh22/carefy_weather?branch=master)
+[![Known Vulnerabilities](https://snyk.io/test/github/Marcosh22/carefy_weather/badge.svg)](https://snyk.io/test/github/Marcosh22/carefy_weather)
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)
+[![Open Source](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://opensource.org/)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# **CarefyWeather - Busca Meteorológica Personalizada**
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+<br />
 
-### `npm start`
+## [**Link para a aplicação**](https://marcosh22.github.io/carefy_weather/)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+> ## Princípios
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+* Single Responsibility Principle (SRP)
+* Open Closed Principle (OCP)
+* Liskov Substitution Principle (LSP)
+* Interface Segregation Principle (ISP)
+* Dependency Inversion Principle (DIP)
+* Separation of Concerns (SOC)
+* Don't Repeat Yourself (DRY)
+* You Aren't Gonna Need It (YAGNI)
+* Keep It Simple, Silly (KISS)
+* Composition Over Inheritance
+* Small Commits
 
-### `npm test`
+> ## Design Patterns
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* Factory
+* Adapter
+* Composite
+* Decorator
+* Dependency Injection
+* Composition Root
+* Builder
+* Proxy
 
-### `npm run build`
+> ## Metodologias e Designs
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* TDD
+* Clean Architecture
+* DDD
+* Reactive Programming
+* Responsive Layout
+* Conventional Commits
+* GitFlow
+* Modular Design
+* Dependency Diagrams
+* Use Cases
+* Continuous Integration
+* Continuous Delivery
+* Continuous Deployment
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+> ## Bibliotecas e Ferramentas
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* Typescript
+* React
+* Recoil
+* React Router DOM
+* Axios
+* Git
+* SASS
+* NPM
+* Husky
+* Lint Staged
+* Eslint
+* Standard Javascript Style
 
-### `npm run eject`
+> ## Features do React
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+* Functional Components
+* UseState
+* UseContext
+* UseEffect
+* UseHistory
+* UseRef
+* UseParams
+* Custom Hooks
+* UseRecoilState
+* UseResetRecoilState
+* UseRecoilValue
+* UseRecoilSetState
+* Atom
+* Router
+* Memo
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+> ## Features do Git
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+* Alias
+* Log Personalizado
+* Branch
+* Reset
+* Amend
+* Tag
+* Tag Anotada
+* Stash
+* Rebase
+* Merge
+* Add
+* Commit
+* Push
+* Pull
+* Shortlog
+* Status
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+> ## Features do Typescript
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+* POO Avançado
+* Interface
+* Type Alias
+* Namespace
+* Module
+* Utility Types
+* Modularização de Paths
+* Build
+* Deploy
+* Generics
