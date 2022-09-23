@@ -14,13 +14,15 @@ const Router: React.FC = () => {
   }
 
   return (
-    <RecoilRoot initializeState={({ set }) => set(currentCityState, state)}>
-      <BrowserRouter>
-        <Routes>
-            <Route path="/" element={<MakeSearchCityWheater />}/>
-          </Routes>
-      </BrowserRouter>
-    </RecoilRoot>
+    <React.StrictMode>
+      <RecoilRoot initializeState={({ set }) => set(currentCityState, state)}>
+        <BrowserRouter>
+          <Routes>
+              <Route path="/" element={<MakeSearchCityWheater />}/>
+            </Routes>
+        </BrowserRouter>
+      </RecoilRoot>
+    </React.StrictMode>
   )
 }
 

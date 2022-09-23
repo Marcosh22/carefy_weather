@@ -2,7 +2,7 @@ node_modules
 .vscode
 coverage
 public
-dist
 build
+dist
 *.scss
 *.json
