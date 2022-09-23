@@ -1,6 +1,6 @@
 import React from 'react'
 import {
-  BrowserRouter, Route, Routes
+  HashRouter, Route, Routes
 } from 'react-router-dom'
 import { setCurrentCityAdapter, getCurrentCityAdapter } from 'main/adapters'
 import { currentCityState } from 'presentation/components'
@@ -16,11 +16,11 @@ const Router: React.FC = () => {
   return (
     <React.StrictMode>
       <RecoilRoot initializeState={({ set }) => set(currentCityState, state)}>
-        <BrowserRouter>
+        <HashRouter>
           <Routes>
               <Route path="/" element={<MakeSearchCityWheater />}/>
             </Routes>
-        </BrowserRouter>
+        </HashRouter>
       </RecoilRoot>
     </React.StrictMode>
   )
